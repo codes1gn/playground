@@ -1,0 +1,27 @@
+[package]
+name = "ndarray_blas_test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+ndarray = { version = "0.14", features = ["blas"] }
+# ndarray = { version = "0.15", features = ["blas"] }
+
+# use netlib
+# blas-src = { version = "0.6.1", default-features = false, features = ["netlib"] }
+
+# use openblas
+blas-src = { version = "0.6.1", features = ["openblas"] }
+openblas-src = { version = "0.9.0", features = ["cblas", "system"] }
+# blas-src = { version = "0.8", features = ["openblas"] }
+# openblas-src = { version = "0.10", features = ["cblas", "system"] }
+# blas-src = { version = "0.7", features = ["openblas"] }
+# openblas-src = { version = "0.9", features = ["cblas", "system"] }
+
+# linalg submodule
+# ndarray-linalg = { version = "0.13", features = ["openblas-system"] }
+ndarray-linalg = { version = "0.13", features = ["netlib-system"] }
+
