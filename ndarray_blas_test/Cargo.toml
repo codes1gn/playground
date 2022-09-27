@@ -25,3 +25,9 @@ openblas-src = { version = "0.9.0", features = ["cblas", "system"] }
 # ndarray-linalg = { version = "0.13", features = ["openblas-system"] }
 ndarray-linalg = { version = "0.13", features = ["netlib-system"] }
 
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "gemv"
+harness = false

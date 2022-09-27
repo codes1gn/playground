@@ -25,26 +25,7 @@ fn simd_128_f32() {
 	}
 }
 
-fn blas_test() {
-    let mone = vec![
-        2.0, 3.0,
-        4.0, 5.0
-    ];
-    let mtwo = vec![
-        0.5, 1.0,
-        1.5, 2.0
-    ];
-    let mut result = vec![
-        0.0, 0.0,
-        0.0, 0.0,
-    ];
-    unsafe {
-        dgemm(b'N', b'N', 2, 2, 2, 1.0, &mone, 2, &mtwo, 2, 1.0, &result, 2);
-    }
-}
-
 fn main() {
     standard_128_f32();
     simd_128_f32();
-    blas_test();
 }
